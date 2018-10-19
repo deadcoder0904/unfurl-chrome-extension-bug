@@ -1,5 +1,6 @@
 import React from "react";
 import unfurl from "unfurl.js";
+import axios from "axios";
 
 class App extends React.Component {
   state = {
@@ -8,6 +9,11 @@ class App extends React.Component {
 
   componentDidMount() {
     this._fetchMeta();
+
+    axios
+      .get("https://framer.com/")
+      .then(console.log)
+      .catch(console.error);
   }
 
   _fetchMeta = async () => {
