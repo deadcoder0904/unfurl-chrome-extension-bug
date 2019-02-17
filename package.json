@@ -1,13 +1,13 @@
 {
-  "name": "react-web-extension-boilerplate",
-  "version": "0.1.0",
+  "name": "unfurl-chrome-extension-bug",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-scripts": "2.0.4",
-    "unfurl.js": "^1.1.6"
+    "@rooks/use-did-mount": "^1.1.0",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "react-scripts": "2.1.5",
+    "unfurl.js": "^3.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,11 +1,11 @@
 {
   "name": "Unfurl Chrome Extension Bug",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Bug demonstrating use of UNFURL in Chrome Extension",
   "homepage_url": "https://github.com/deadcoder0904/unfurl-chrome-extension-bug/",
   "manifest_version": 2,
   "minimum_chrome_version": "60",
-  "content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'",
+  "content_security_policy": "script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'",
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "index.html",

@@ -1,48 +1,30 @@
-import React from "react";
+import useDidMount from "@rooks/use-did-mount";
+import React, { useState } from "react";
 import unfurl from "unfurl.js";
-import axios from "axios";
 
-class App extends React.Component {
-  state = {
-    result: "This must be changed by UNFURL"
-  };
-
-  componentDidMount() {
-    this._fetchMeta();
-
-    axios
-      .get("https://framer.com/")
-      .then(console.log)
-      .catch(console.error);
+const _fetchMeta = async setResult => {
+  try {
+    let result = await unfurl("https://imgur.com/gallery/fhAIf");
+    setResult(result);
+  } catch (e) {
+    console.error("e", e);
   }
+};
 
-  _fetchMeta = async () => {
-    try {
-      let result = await unfurl({
-        uri: "https://akshaykadam.me",
-        headers: {
-          "Access-Control-Allow-Origin": "*"
-        }
-      });
-      console.log("result", result);
-      this.setState({ result });
-    } catch (e) {
-      console.error("e", e);
-    }
-  };
+const App = () => {
+  const [result, setResult] = useState("This must be changed by UNFURL");
 
-  render() {
-    const { result } = this.state;
+  useDidMount(() => {
+    _fetchMeta(setResult);
+  });
 
-    return (
-      <>
-        <h1>UNFURL BUG DEMO</h1>
-        <h4>{JSON.stringify(result)}</h4>
-
-        <p>Right Click & Open Inspect & Check Console to see the error</p>
-      </>
-    );
-  }
-}
+  return (
+    <>
+      <h1>UNFURL BUG</h1>
+      <h4>{JSON.stringify(result)}</h4>
+      <p>Right Click & Open Inspect & Check Console to see the error</p>
+    </>
+  );
+};
 
 export default App;
